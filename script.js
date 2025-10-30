@@ -24,7 +24,7 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Music Toggle and Autoplay
+// Music Toggle and Autoplay with Persistent Playback
 const musicToggle = document.getElementById('musicToggle');
 const bgMusic = document.getElementById('bgMusic');
 const musicOverlay = document.getElementById('musicOverlay');
@@ -34,6 +34,13 @@ let isPlaying = false;
 
 // Check if user has a music preference saved
 const musicPreference = localStorage.getItem('musicEnabled');
+const savedMusicTime = sessionStorage.getItem('musicCurrentTime');
+const wasMusicPlaying = sessionStorage.getItem('musicWasPlaying');
+
+// Restore music position from previous page
+if (savedMusicTime) {
+    bgMusic.currentTime = parseFloat(savedMusicTime);
+}
 
 // Try to autoplay music
 const tryAutoplay = () => {
@@ -46,6 +53,7 @@ const tryAutoplay = () => {
                 musicOverlay.classList.remove('show');
             }
             localStorage.setItem('musicEnabled', 'true');
+            sessionStorage.setItem('musicWasPlaying', 'true');
         })
         .catch(() => {
             // Autoplay blocked - show overlay on home page only
@@ -65,6 +73,7 @@ if (enableMusicBtn) {
         musicToggle.classList.add('playing');
         musicOverlay.classList.remove('show');
         localStorage.setItem('musicEnabled', 'true');
+        sessionStorage.setItem('musicWasPlaying', 'true');
     });
 }
 
@@ -73,6 +82,7 @@ if (skipMusicBtn) {
     skipMusicBtn.addEventListener('click', () => {
         musicOverlay.classList.remove('show');
         localStorage.setItem('musicEnabled', 'false');
+        sessionStorage.setItem('musicWasPlaying', 'false');
     });
 }
 
@@ -83,20 +93,37 @@ musicToggle.addEventListener('click', () => {
         musicToggle.classList.remove('playing');
         isPlaying = false;
         localStorage.setItem('musicEnabled', 'false');
+        sessionStorage.setItem('musicWasPlaying', 'false');
     } else {
         bgMusic.play();
         musicToggle.classList.add('playing');
         isPlaying = true;
         localStorage.setItem('musicEnabled', 'true');
+        sessionStorage.setItem('musicWasPlaying', 'true');
+    }
+});
+
+// Save music position periodically
+setInterval(() => {
+    if (bgMusic && !bgMusic.paused) {
+        sessionStorage.setItem('musicCurrentTime', bgMusic.currentTime.toString());
+    }
+}, 500);
+
+// Save music state before page unload
+window.addEventListener('beforeunload', () => {
+    if (bgMusic) {
+        sessionStorage.setItem('musicCurrentTime', bgMusic.currentTime.toString());
+        sessionStorage.setItem('musicWasPlaying', isPlaying ? 'true' : 'false');
     }
 });
 
 // Try autoplay on page load
 window.addEventListener('load', () => {
-    // If user previously enabled music, autoplay
-    if (musicPreference === 'true') {
+    // If music was playing on previous page, continue playing
+    if (wasMusicPlaying === 'true' || musicPreference === 'true') {
         tryAutoplay();
-    } else if (musicPreference === null) {
+    } else if (musicPreference === null && !wasMusicPlaying) {
         // First visit - try autoplay
         tryAutoplay();
     }
