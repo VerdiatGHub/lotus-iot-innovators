@@ -1577,3 +1577,104 @@ th.highlight {
 .hero-content {
     z-index: 1;
 }
+
+/* Music Volume Control */
+.music-control {
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.volume-slider-container {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    background: var(--bg-secondary);
+    padding: 0.8rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.music-control:hover .volume-slider-container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.volume-slider {
+    width: 100px;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 100%);
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.5);
+    transition: all 0.3s ease;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 12px rgba(16, 185, 129, 0.7);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.5);
+    transition: all 0.3s ease;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 3px 12px rgba(16, 185, 129, 0.7);
+}
+
+.volume-label {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 35px;
+}
+
+@media (max-width: 768px) {
+    .music-control {
+        top: 5.5rem;
+        right: 1rem;
+    }
+    
+    .volume-slider-container {
+        position: fixed;
+        top: 5.5rem;
+        right: 4.5rem;
+    }
+    
+    .music-control:hover .volume-slider-container {
+        opacity: 1;
+        visibility: visible;
+    }
+}

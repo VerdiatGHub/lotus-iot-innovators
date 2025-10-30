@@ -30,17 +30,45 @@ const bgMusic = document.getElementById('bgMusic');
 const musicOverlay = document.getElementById('musicOverlay');
 const enableMusicBtn = document.getElementById('enableMusic');
 const skipMusicBtn = document.getElementById('skipMusic');
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeLabel = document.getElementById('volumeLabel');
 let isPlaying = false;
 
 // Check if user has a music preference saved
 const musicPreference = localStorage.getItem('musicEnabled');
 const savedMusicTime = sessionStorage.getItem('musicCurrentTime');
 const wasMusicPlaying = sessionStorage.getItem('musicWasPlaying');
+const savedVolume = localStorage.getItem('musicVolume');
+
+// Restore volume preference
+if (savedVolume) {
+    const volume = parseInt(savedVolume);
+    bgMusic.volume = volume / 100;
+    volumeSlider.value = volume;
+    volumeLabel.textContent = volume + '%';
+    updateSliderBackground(volume);
+} else {
+    bgMusic.volume = 0.5; // Default 50%
+}
 
 // Restore music position from previous page
 if (savedMusicTime) {
     bgMusic.currentTime = parseFloat(savedMusicTime);
 }
+
+// Volume slider control
+function updateSliderBackground(value) {
+    const percentage = value;
+    volumeSlider.style.background = `linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) ${percentage}%, rgba(255, 255, 255, 0.2) ${percentage}%, rgba(255, 255, 255, 0.2) 100%)`;
+}
+
+volumeSlider.addEventListener('input', (e) => {
+    const volume = e.target.value;
+    bgMusic.volume = volume / 100;
+    volumeLabel.textContent = volume + '%';
+    localStorage.setItem('musicVolume', volume);
+    updateSliderBackground(volume);
+});
 
 // Try to autoplay music
 const tryAutoplay = () => {
