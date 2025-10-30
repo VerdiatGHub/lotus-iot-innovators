@@ -1554,3 +1554,25 @@ th.highlight {
 .project-badge i {
     font-size: 1.2rem;
 }
+
+/* Fix Hero Section Overlap */
+.hero {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.overview, section {
+    position: relative;
+    z-index: 2;
+    background: var(--bg-primary);
+}
+
+/* Ensure proper stacking context */
+.particles {
+    z-index: 0 !important;
+}
+
+.hero-content {
+    z-index: 1;
+}
