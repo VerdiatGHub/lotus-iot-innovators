@@ -1,0 +1,8 @@
+Contact: mailto:quyentttiace200993@gmail.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, vi
+Canonical: https://lotus-iot-innovators.netlify.app/.well-known/security.txt
+
+# Lotus IoT - Security Contact
+# If you discover any security vulnerabilities, please report them to us.
+# We take security seriously and will respond promptly.

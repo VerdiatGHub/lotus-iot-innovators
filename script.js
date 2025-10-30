@@ -252,6 +252,19 @@ faqItems.forEach(item => {
     });
 });
 
+// Input Sanitization Function
+const sanitizeInput = (input) => {
+    const div = document.createElement('div');
+    div.textContent = input;
+    return div.innerHTML;
+};
+
+// Email Validation
+const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+};
+
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
 
@@ -262,16 +275,30 @@ if (contactForm) {
         const formMessage = document.getElementById('formMessage');
         const formData = new FormData(contactForm);
         
-        // Simple validation
-        let isValid = true;
-        formData.forEach((value, key) => {
-            if (key !== 'phone' && !value.trim()) {
-                isValid = false;
-            }
-        });
+        // Get and sanitize form values
+        const name = sanitizeInput(formData.get('name') || '');
+        const email = sanitizeInput(formData.get('email') || '');
+        const subject = sanitizeInput(formData.get('subject') || '');
+        const message = sanitizeInput(formData.get('message') || '');
+        const phone = sanitizeInput(formData.get('phone') || '');
         
-        if (!isValid) {
+        // Validation
+        if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
             formMessage.textContent = 'Please fill in all required fields.';
+            formMessage.className = 'form-message error';
+            return;
+        }
+        
+        // Email validation
+        if (!isValidEmail(email)) {
+            formMessage.textContent = 'Please enter a valid email address.';
+            formMessage.className = 'form-message error';
+            return;
+        }
+        
+        // Length validation
+        if (name.length > 100 || email.length > 100 || subject.length > 200 || message.length > 5000) {
+            formMessage.textContent = 'Input too long. Please shorten your message.';
             formMessage.className = 'form-message error';
             return;
         }

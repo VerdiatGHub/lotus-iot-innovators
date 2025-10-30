@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lotus-iot-innovators.netlify.app/sitemap.xml
+
+# Security
+User-agent: *
+Disallow: /.well-known/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Rate limiting - prevent aggressive crawling
+Crawl-delay: 1
