@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Lotus IoT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop preload="auto" autoplay>
+        <source src="lofi-background.mp3" type="audio/mpeg">
+        <source src="lofi-background.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Lotus IoT</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html" class="active">Features</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Product Features</h1>
+            <p class="fade-in delay-1">Cutting-edge technology for traditional farming</p>
+        </div>
+    </section>
+
+    <!-- Hardware Features -->
+    <section class="hardware-features">
+        <div class="container">
+            <h2 class="section-title fade-in">Hardware Components</h2>
+            <p class="section-subtitle fade-in">Robust, affordable, and weather-resistant IoT station</p>
+            
+            <div class="hardware-grid">
+                <div class="hardware-card fade-up">
+                    <div class="hardware-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Arduino UNO R3 + ESP8266</h3>
+                    <p>Reliable microcontroller with WiFi connectivity for real-time data transmission</p>
+                    <span class="price">150,000 VND</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-1">
+                    <div class="hardware-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Ultrasonic Water Level Sensor</h3>
+                    <p>HC-SR04 sensor for accurate water depth measurement with ±3% precision</p>
+                    <span class="feature-tag">Real-time monitoring</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-2">
+                    <div class="hardware-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>pH & Salinity Sensor</h3>
+                    <p>EC sensor for detecting water acidity and salt content crucial for lotus growth</p>
+                    <span class="feature-tag">Early warning system</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-3">
+                    <div class="hardware-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>DHT11 Temperature Sensor</h3>
+                    <p>Monitor temperature and humidity levels for optimal growing conditions</p>
+                    <span class="feature-tag">Environmental tracking</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-4">
+                    <div class="hardware-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>LDR Light Sensor</h3>
+                    <p>Track sunlight intensity to predict photosynthesis and blooming patterns</p>
+                    <span class="feature-tag">Growth optimization</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-5">
+                    <div class="hardware-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Power System</h3>
+                    <p>10W solar panel with 18650 battery backup for continuous 24/7 operation</p>
+                    <span class="price">600,000 VND</span>
+                </div>
+                
+                <div class="hardware-card fade-up">
+                    <div class="hardware-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Relay Control Module</h3>
+                    <p>Automatic water pump activation when environmental thresholds are exceeded</p>
+                    <span class="feature-tag">Automation</span>
+                </div>
+                
+                <div class="hardware-card fade-up delay-1">
+                    <div class="hardware-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>SIM800L GSM Module</h3>
+                    <p>Emergency phone call alerts for critical situations, ideal for elderly farmers</p>
+                    <span class="feature-tag">Emergency response</span>
+                </div>
+            </div>
+            
+            <div class="cost-summary fade-up">
+                <h3>Total Hardware Cost</h3>
+                <div class="cost-breakdown">
+                    <p><strong>Complete Station:</strong> ~1,350,000 - 1,500,000 VND</p>
+                    <p class="cost-comparison">90-95% cheaper than commercial alternatives (25-40 million VND)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Features -->
+    <section class="software-features">
+        <div class="container">
+            <h2 class="section-title fade-in">Software & Intelligence</h2>
+            <p class="section-subtitle fade-in">Powerful analytics and user-friendly interface</p>
+            
+            <div class="features-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="monitoring">Monitoring</button>
+                    <button class="tab-btn" data-tab="analytics">Analytics</button>
+                    <button class="tab-btn" data-tab="control">Control</button>
+                    <button class="tab-btn" data-tab="ai">AI Predictions</button>
+                </div>
+                
+                <div class="tab-content active" id="monitoring">
+                    <div class="content-grid">
+                        <div class="content-text fade-in">
+                            <h3>Real-Time Monitoring Dashboard</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Live data updates every 5 minutes</li>
+                                <li><i class="fas fa-check-circle"></i> Visual charts and graphs for easy understanding</li>
+                                <li><i class="fas fa-check-circle"></i> Color-coded status indicators (Green/Yellow/Red)</li>
+                                <li><i class="fas fa-check-circle"></i> Historical data tracking and trend analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Multi-pond management from single interface</li>
+                                <li><i class="fas fa-check-circle"></i> Mobile and web app compatibility</li>
+                            </ul>
+                        </div>
+                        <div class="content-visual fade-in delay-1">
+                            <div class="feature-mockup">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Interactive Dashboard</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="analytics">
+                    <div class="content-grid">
+                        <div class="content-text fade-in">
+                            <h3>Intelligent Data Analysis</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Z-score anomaly detection algorithm</li>
+                                <li><i class="fas fa-check-circle"></i> Moving average trend analysis</li>
+                                <li><i class="fas fa-check-circle"></i> Automatic threshold detection</li>
+                                <li><i class="fas fa-check-circle"></i> Pattern recognition for seasonal changes</li>
+                                <li><i class="fas fa-check-circle"></i> Statistical reporting and insights</li>
+                                <li><i class="fas fa-check-circle"></i> Data export for further analysis</li>
+                            </ul>
+                        </div>
+                        <div class="content-visual fade-in delay-1">
+                            <div class="feature-mockup">
+                                <i class="fas fa-brain"></i>
+                                <p>Smart Analytics Engine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="control">
+                    <div class="content-grid">
+                        <div class="content-text fade-in">
+                            <h3>Remote Control & Automation</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Turn water pump on/off remotely</li>
+                                <li><i class="fas fa-check-circle"></i> Customize alert thresholds for each parameter</li>
+                                <li><i class="fas fa-check-circle"></i> Schedule automatic watering times</li>
+                                <li><i class="fas fa-check-circle"></i> Emergency override controls</li>
+                                <li><i class="fas fa-check-circle"></i> Multi-user access management</li>
+                                <li><i class="fas fa-check-circle"></i> Activity logging and audit trail</li>
+                            </ul>
+                        </div>
+                        <div class="content-visual fade-in delay-1">
+                            <div class="feature-mockup">
+                                <i class="fas fa-sliders-h"></i>
+                                <p>Control Panel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="ai">
+                    <div class="content-grid">
+                        <div class="content-text fade-in">
+                            <h3>AI-Powered Predictions</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> 24-hour water level forecasting</li>
+                                <li><i class="fas fa-check-circle"></i> Drought risk assessment</li>
+                                <li><i class="fas fa-check-circle"></i> Lotus bloom time predictions</li>
+                                <li><i class="fas fa-check-circle"></i> Environmental trend modeling</li>
+                                <li><i class="fas fa-check-circle"></i> Yield optimization recommendations</li>
+                                <li><i class="fas fa-check-circle"></i> Seasonal pattern learning</li>
+                            </ul>
+                            <p class="note"><strong>Note:</strong> AI features will be integrated in Phase 2 of the project using Linear and Random Forest Regression models.</p>
+                        </div>
+                        <div class="content-visual fade-in delay-1">
+                            <div class="feature-mockup">
+                                <i class="fas fa-robot"></i>
+                                <p>AI Prediction Engine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert System -->
+    <section class="alert-system">
+        <div class="container">
+            <h2 class="section-title fade-in">Multi-Channel Alert System</h2>
+            <p class="section-subtitle fade-in">Never miss a critical event</p>
+            
+            <div class="alert-grid">
+                <div class="alert-card fade-up">
+                    <div class="alert-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Push Notifications</h3>
+                    <p>Instant app notifications when parameters exceed safe thresholds</p>
+                    <div class="alert-triggers">
+                        <span class="trigger">pH &lt; 6.5 or &gt; 7.5</span>
+                        <span class="trigger">Salinity &gt; 0.5‰</span>
+                        <span class="trigger">Water &lt; 25cm</span>
+                    </div>
+                </div>
+                
+                <div class="alert-card fade-up delay-1">
+                    <div class="alert-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3>Phone Call Alerts</h3>
+                    <p>Automatic emergency calls for critical situations via SIM800L module</p>
+                    <div class="alert-benefits">
+                        <p><i class="fas fa-check"></i> Ideal for elderly farmers</p>
+                        <p><i class="fas fa-check"></i> Works without smartphone</p>
+                        <p><i class="fas fa-check"></i> Multiple contact numbers</p>
+                    </div>
+                </div>
+                
+                <div class="alert-card fade-up delay-2">
+                    <div class="alert-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Automation</h3>
+                    <p>Automatic relay activation to start water pump when needed</p>
+                    <div class="alert-benefits">
+                        <p><i class="fas fa-check"></i> Reduces manual labor by 70%</p>
+                        <p><i class="fas fa-check"></i> 24-48 hour early response</p>
+                        <p><i class="fas fa-check"></i> Prevents crop damage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="container">
+            <h2 class="section-title fade-in">How We Compare</h2>
+            <div class="comparison-table fade-up">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Traditional Method</th>
+                            <th>Commercial Devices</th>
+                            <th class="highlight">Lotus IoT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cost</td>
+                            <td>~0 (Manual)</td>
+                            <td>25-40 Million VND</td>
+                            <td class="highlight"><strong>1.5 Million VND</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Automation</td>
+                            <td><i class="fas fa-times"></i> None</td>
+                            <td><i class="fas fa-check"></i> Yes</td>
+                            <td class="highlight"><i class="fas fa-check"></i> <strong>Yes + Pump Control</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Alerts</td>
+                            <td><i class="fas fa-times"></i> None</td>
+                            <td><i class="fas fa-check"></i> Yes</td>
+                            <td class="highlight"><i class="fas fa-check"></i> <strong>App + Phone Calls</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Real-time Data</td>
+                            <td><i class="fas fa-times"></i> No</td>
+                            <td><i class="fas fa-check"></i> Yes</td>
+                            <td class="highlight"><i class="fas fa-check"></i> <strong>WiFi/4G</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Data Analysis</td>
+                            <td><i class="fas fa-times"></i> No</td>
+                            <td><i class="fas fa-minus"></i> Limited</td>
+                            <td class="highlight"><i class="fas fa-check"></i> <strong>AI + Storage + Charts</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Power Source</td>
+                            <td>Grid</td>
+                            <td>Grid</td>
+                            <td class="highlight"><strong>Solar Energy</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Ease of Use</td>
+                            <td><i class="fas fa-minus"></i> Manual</td>
+                            <td><i class="fas fa-minus"></i> Complex</td>
+                            <td class="highlight"><i class="fas fa-check"></i> <strong>User-Friendly App</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title fade-in">Key Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card fade-up">
+                    <div class="benefit-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Save 4-6 Million VND/Year</h3>
+                    <p>Reduce manual monitoring costs and prevent crop losses through early detection</p>
+                </div>
+                
+                <div class="benefit-card fade-up delay-1">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Increase Yield 15-20%</h3>
+                    <p>Maintain optimal environmental conditions for maximum lotus productivity</p>
+                </div>
+                
+                <div class="benefit-card fade-up delay-2">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Save 2 Days/Month</h3>
+                    <p>Eliminate manual water testing and monitoring labor</p>
+                </div>
+                
+                <div class="benefit-card fade-up delay-3">
+                    <div class="benefit-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable & Green</h3>
+                    <p>Solar-powered operation reduces CO₂ emissions by 20%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Modernize Your Farm?</h2>
+                <p>Discover how Lotus IoT can transform your lotus cultivation</p>
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Request Information</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lotus Innovators</h3>
+                    <p>Smart technology for sustainable lotus farming in the Mekong Delta</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> quyentttiace200993@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 0788915035</li>
+                        <li><i class="fas fa-map-marker-alt"></i> FPT University - IA1902</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lotus Innovators. All rights reserved. | Mekong Tech Business Challenge 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus IoT - Smart Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop preload="auto" autoplay>
+        <source src="lofi-background.mp3" type="audio/mpeg">
+        <source src="lofi-background.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Welcome Overlay -->
+    <div class="music-overlay" id="musicOverlay">
+        <div class="music-overlay-content">
+            <i class="fas fa-music"></i>
+            <h2>Enjoy Lofi Background Music?</h2>
+            <p>Click to enable relaxing background music while browsing</p>
+            <button class="btn btn-primary" id="enableMusic">
+                <i class="fas fa-play"></i>
+                <span>Enable Music</span>
+            </button>
+            <button class="btn btn-secondary" id="skipMusic">
+                <span>Continue Without Music</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Lotus IoT</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="fade-in">Lotus IoT</h1>
+                <h2 class="fade-in delay-1">Smart Lotus Monitoring System</h2>
+                <p class="fade-in delay-2">An intelligent IoT solution for monitoring and analyzing lotus pond environments in the Mekong Delta</p>
+                <div class="hero-buttons fade-in delay-3">
+                    <a href="features.html" class="btn btn-primary">
+                        <span>Explore Features</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">
+                        <span>Learn More</span>
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-in delay-4">
+                <div class="floating-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Track pH, salinity, water level, temperature, and light</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card fade-up">
+                <i class="fas fa-leaf"></i>
+                <h3 class="counter" data-target="4500">0</h3>
+                <p>Hectares of Lotus Fields</p>
+            </div>
+            <div class="stat-card fade-up delay-1">
+                <i class="fas fa-users"></i>
+                <h3 class="counter" data-target="2000">0</h3>
+                <p>Potential Users</p>
+            </div>
+            <div class="stat-card fade-up delay-2">
+                <i class="fas fa-chart-line"></i>
+                <h3><span class="counter" data-target="30">0</span>%</h3>
+                <p>Productivity Increase</p>
+            </div>
+            <div class="stat-card fade-up delay-3">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>15-20x</h3>
+                <p>More Affordable</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview">
+        <div class="container">
+            <h2 class="section-title fade-in">Revolutionizing Lotus Farming</h2>
+            <p class="section-subtitle fade-in">Climate change and saltwater intrusion threaten lotus cultivation in the Mekong Delta. Our solution provides farmers with real-time data and automated alerts.</p>
+            
+            <div class="features-grid">
+                <div class="feature-item fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>IoT Sensors</h3>
+                    <p>Multi-sensor system tracking water level, pH, salinity, temperature, and light intensity</p>
+                </div>
+                <div class="feature-item fade-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App</h3>
+                    <p>Monitor and control your system remotely from anywhere</p>
+                </div>
+                <div class="feature-item fade-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Smart Alerts</h3>
+                    <p>Automatic notifications when environmental conditions change</p>
+                </div>
+                <div class="feature-item fade-up delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar Powered</h3>
+                    <p>Sustainable energy solution with 24/7 operation</p>
+                </div>
+                <div class="feature-item fade-up delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Analysis</h3>
+                    <p>Predictive analytics for environmental trends and bloom forecasting</p>
+                </div>
+                <div class="feature-item fade-up delay-5">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Auto Control</h3>
+                    <p>Automated water pump activation based on conditions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Transform Your Lotus Farm?</h2>
+                <p>Join us in building sustainable agriculture for the Mekong Delta</p>
+                <a href="contact.html" class="btn btn-primary">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lotus Innovators</h3>
+                    <p>Smart technology for sustainable lotus farming in the Mekong Delta</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> quyentttiace200993@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 0788915035</li>
+                        <li><i class="fas fa-map-marker-alt"></i> FPT University - IA1902</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lotus Innovators. All rights reserved. | Mekong Tech Business Challenge 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

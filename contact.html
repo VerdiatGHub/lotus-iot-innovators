@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Lotus IoT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Background Audio -->
+    <audio id="bgMusic" loop preload="auto" autoplay>
+        <source src="lofi-background.mp3" type="audio/mpeg">
+        <source src="lofi-background.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Lotus IoT</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">Get In Touch</h1>
+            <p class="fade-in delay-1">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper fade-in">
+                    <h2>Send Us a Message</h2>
+                    <p>Have questions about Lotus IoT? Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i>
+                                Full Name *
+                            </label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subject *
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Information</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="support">Technical Support</option>
+                                <option value="demo">Request Demo</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Message *
+                            </label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us more about your inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <div id="formMessage" class="form-message"></div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="contact-info fade-in delay-1">
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        <p>Reach out to us through any of these channels</p>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Team Leader</h4>
+                                <p>Trần Thị Thúy Quyên</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:quyentttiace200993@gmail.com">quyentttiace200993@gmail.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:0788915035">0788915035</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Institution</h4>
+                                <p>FPT University<br>Information Assurance - IA1902</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-text">
+                                <h4>Response Time</h4>
+                                <p>We typically respond within 24-48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-connect">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>How much does Lotus IoT cost?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A complete Lotus IoT station costs approximately 1.5-1.8 million VND, which is 90-95% cheaper than commercial monitoring systems. We also offer a subscription service at 100,000 VND/month that includes cloud storage, maintenance, and support.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-1">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Is technical knowledge required to use the system?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No technical expertise is needed! Our mobile app is designed to be user-friendly with simple controls and visual indicators. We also provide training and support during installation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-2">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>How long does the battery last?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The system is powered by solar energy with battery backup, ensuring 24/7 operation. The battery can run for 2-3 days without sunlight, making it reliable even during cloudy weather.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-3">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Can I monitor multiple ponds?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can connect multiple Lotus IoT stations to a single app account and monitor all your ponds from one interface. Each station operates independently while sharing data to the central dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>What happens if internet connection is lost?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The system stores data locally and will automatically sync once the connection is restored. Emergency alerts can still be sent via GSM module (phone calls) even without internet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-1">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Is the system weatherproof?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! The station is designed with waterproof housing (IP65 rating) to withstand rain, humidity, and harsh weather conditions typical in the Mekong Delta.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-2">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Do you offer installation and training?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide complete installation services and hands-on training to ensure you're comfortable using the system. Our support team is also available for ongoing assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up delay-3">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Can this system be used for other crops?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! While designed for lotus cultivation, the system can be adapted for rice fields, aquaculture (shrimp-lotus), hydroponic vegetables, and other water-dependent crops. Contact us to discuss your specific needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Project Location</h2>
+            <div class="map-wrapper fade-up">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Mekong Delta Region</h3>
+                    <p>Focusing on lotus cultivation areas in Dong Thap, Long An, and Tra Vinh provinces</p>
+                    <div class="location-tags">
+                        <span><i class="fas fa-map-marker-alt"></i> Dong Thap</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Long An</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Tra Vinh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Start Your Smart Farming Journey Today</h2>
+                <p>Let's work together to build sustainable agriculture in the Mekong Delta</p>
+                <div class="cta-buttons">
+                    <a href="#contactForm" class="btn btn-primary scroll-to">
+                        <span>Contact Us Now</span>
+                        <i class="fas fa-arrow-up"></i>
+                    </a>
+                    <a href="features.html" class="btn btn-secondary">
+                        <span>View Features</span>
+                        <i class="fas fa-eye"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lotus Innovators</h3>
+                    <p>Smart technology for sustainable lotus farming in the Mekong Delta</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> quyentttiace200993@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> 0788915035</li>
+                        <li><i class="fas fa-map-marker-alt"></i> FPT University - IA1902</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lotus Innovators. All rights reserved. | Mekong Tech Business Challenge 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
