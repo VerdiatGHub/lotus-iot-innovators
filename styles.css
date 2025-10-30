@@ -1581,19 +1581,19 @@ th.highlight {
 /* Music Volume Control */
 .music-control {
     position: fixed;
-    top: 6rem;
-    right: 2rem;
+    top: 170px;
+    right: 20px;
     z-index: 1000;
     display: inline-block;
 }
 
 .volume-slider-container {
     position: fixed;
-    top: 6rem;
-    right: 5.5rem;
+    top: 170px;
+    right: 100px;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(10px);
+    transform: translateX(20px);
     transition: all 0.3s ease;
     background: var(--bg-secondary);
     padding: 0.8rem 1rem;
@@ -1604,6 +1604,7 @@ th.highlight {
     gap: 0.8rem;
     border: 2px solid rgba(16, 185, 129, 0.3);
     pointer-events: none;
+    white-space: nowrap;
 }
 
 .music-toggle:hover + .volume-slider-container,
@@ -1667,12 +1668,12 @@ th.highlight {
 
 @media (max-width: 768px) {
     .music-control {
-        top: 5.5rem;
-        right: 1rem;
+        top: 170px;
+        right: 20px;
     }
     
     .volume-slider-container {
-        top: 5.5rem;
-        right: 4.5rem;
+        top: 170px;
+        right: 85px;
     }
 }
